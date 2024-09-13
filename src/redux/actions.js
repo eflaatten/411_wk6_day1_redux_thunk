@@ -1,4 +1,26 @@
 const url = "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json"
+export const fetchMakes = () => {
+    return (dispatch) => {
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: 'FETCH_MAKES',
+                value: data.Results
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+}
+
+export const deleteMake = (index) => {
+    return {
+        type: 'DELETE_MAKE',
+        value: index
+    }
+}
 
 export const addCar = (car) => {
     return {
