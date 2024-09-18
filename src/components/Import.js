@@ -28,6 +28,12 @@ const Import = (props) => {
             <h2>COUNT: {props.makes.length}</h2>
             <Button variant="contained" color="primary" onClick={props.fetchMakes}>Import</Button>
             <Table>
+                <TableRow>
+                    <TableCell>Make ID</TableCell>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Vehicle Type</TableCell>
+                    <TableCell>Actions</TableCell>
+                </TableRow>
                 <TableBody>
                     {props.makes.map((make, index) => (
                         <TableRow key={index}>
